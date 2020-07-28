@@ -1,2 +1,2 @@
-# Custom-Video
-This is Video.js Custom Skin With Thumbnails With Hovering On Progress Bar
+# Video.js YouTube Custom Skin
+This is Video.js Custom Skin With Thumbnails on Hovering On Progress Bar
