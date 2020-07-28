@@ -1,0 +1,385 @@
+.custom-video {
+	user-select: none;
+	button {
+		outline: none !important;
+	}
+	margin-top: 4.5em;
+	.row {
+		.col-12 {
+			display: flex;
+			justify-content: center;
+			.vjs-poster {
+				background-size: cover;
+				background-position: center;
+			}
+		}
+		.video-js {
+			user-select: none;
+			outline: none;
+			border: none;
+			.vjs-thumbnail-video {
+				outline: none;
+				border: none;
+			}
+			@media (max-width: 1999.98px) {
+				width: 80% !important;
+				height: 419px !important;
+			}
+			@media (min-width: 1200px) {
+				width: 80% !important;
+				height: 500px !important;
+			}
+			@media (max-width: 998.98px) {
+				width: 90% !important;
+				height: 350px !important;
+			}
+			@media (max-width: 767.98px) {
+				width: 100% !important;
+				height: 287px !important;
+				.vjs-thumbnail-holder {
+					bottom: -20px !important;
+					.vjs-thumbnail-video {
+						width: 125px;
+						height: 125px;
+					}
+					&::after {
+						bottom: 10px !important;
+					}
+				}
+			}
+			@media (max-width: 575.98px) {
+				height: 265px !important;
+			}
+			@media (max-width: 479.98px) {
+				height: 165px !important;
+			}
+			.vjs-big-play-button {
+				position: absolute;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				border-radius: 0;
+				background-color: rgba(0, 0, 0, 0.3);
+				transition: all 0.3s ease;
+				border: none;
+				&:hover {
+					background-color: rgba(0, 0, 0, 0);
+					.vjs-icon-placeholder {
+						background-color: #000;
+						width: 70px;
+						height: 70px;
+						line-height: 70px;
+						font-size: 4rem;
+					}
+				}
+				.vjs-icon-placeholder {
+					position: absolute;
+					font-size: 3rem;
+					border: none;
+					width: 55px;
+					height: 55px;
+					line-height: 55px;
+					background-color: #db4437;
+					border-radius: 50%;
+					transition: all 0.3s ease;
+					&.playAnimationPlay {
+						animation: playButton 0.5s ease;
+					}
+					&.playAnimationPaused {
+						animation: pauseButton 0.5s ease;
+						&::before {
+							content: "\f103" !important;
+						}
+					}
+				}
+			}
+			.vjs-control-bar {
+				.vjs-play-control {
+					order: 1;
+					flex: unset;
+				}
+				.vjs-volume-panel {
+					order: 2;
+					flex: unset;
+					display: flex;
+					align-items: center;
+					font-size: 12px;
+				}
+				.vjs-time-control {
+					display: flex;
+				}
+				.vjs-current-time {
+					order: 3;
+					font-size: 1rem;
+					align-items: center;
+					padding-right: 0.5em;
+				}
+				.vjs-time-divider {
+					order: 4;
+					font-size: 1rem;
+					align-items: center;
+					padding: 0;
+					min-width: unset;
+				}
+				.vjs-duration {
+					order: 5;
+					font-size: 1rem;
+					align-items: center;
+					margin-right: auto;
+					padding-left: 0.5em;
+				}
+				.vjs-progress-control {
+					min-width: unset;
+					&:hover {
+						.vjs-progress-holder {
+							.vjs-play-progress {
+								&::after {
+									content: "";
+									position: absolute;
+									width: 10px;
+									height: 10px;
+									background-color: #bf3b4d;
+									border-radius: 50%;
+									bottom: -2px;
+									right: -5px;
+								}
+							}
+						}
+					}
+					.vjs-thumbnail-holder {
+						bottom: 5px;
+						transform: translateX(-50%);
+						outline: none;
+						border: none;
+						&::after {
+							content: "";
+							position: absolute;
+							display: block;
+							width: 0;
+							height: 0;
+							border-style: solid;
+							border-width: 10px 7px 10px;
+							border-color: rgba(255, 255, 255, 0.5) transparent transparent;
+							bottom: -17px;
+							left: 50%;
+							transform: translateX(-50%);
+						}
+						.vjs-thumbnail-spinner {
+							display: none !important;
+						}
+					}
+				}
+
+				.vjs-remaining-time {
+					display: none;
+				}
+				.vjs-subs-caps-button {
+					order: 6;
+					font-size: 12px;
+					.vjs-menu {
+						display: none;
+						margin-bottom: 2.1em;
+						&.vjs-lock-showing {
+							display: block !important;
+						}
+					}
+				}
+				.vjs-selector-quality {
+					order: 7;
+					button {
+						font-size: 12px;
+					}
+					&::before {
+						font-size: 8px;
+						font-weight: 700;
+						top: 12px;
+						right: 4px;
+						color: #fff;
+						background-color: #ff484a;
+						padding: 2px;
+						z-index: 3;
+						border-radius: 1px;
+					}
+					.vjs-icon-cog {
+						font-size: 12px;
+					}
+					.vjs-menu {
+						display: none;
+						&.vjs-lock-showing {
+							display: block !important;
+						}
+					}
+				}
+				.vjs-picture-in-picture-control {
+					order: 8;
+					flex: unset;
+				}
+				.vjs-fullscreen-control {
+					order: 9;
+					flex: unset;
+					font-size: 14px;
+				}
+				.vjs-menu {
+					margin-bottom: 2.5em;
+					.vjs-menu-content {
+						background-color: rgba(0, 0, 0, 0.5);
+						color: #fff;
+						.vjs-menu-item {
+							outline: none;
+							border: none;
+							&.vjs-menu-item-hd {
+								&::before {
+									content: "HD" !important;
+									font-size: 10px;
+									font-weight: bold;
+									text-transform: uppercase;
+									top: 2px;
+									color: #ff0000;
+									text-shadow: 10px 10px 10px rgba(255, 255, 255, 0.5);
+								}
+							}
+							.vjs-menu-item-text {
+								word-spacing: -3px;
+							}
+						}
+					}
+				}
+			}
+			.vjs-menu-button-popup {
+				.vjs-menu {
+					.vjs-menu-content {
+						bottom: 25px;
+					}
+				}
+			}
+		}
+	}
+}
+@keyframes playButton {
+	0% {
+		width: 70px;
+		height: 70px;
+		line-height: 70px;
+		font-size: 5rem;
+		background-color: #000;
+		opacity: 1;
+	}
+	25% {
+		width: 90px;
+		height: 90px;
+		line-height: 90px;
+		font-size: 6rem;
+		background-color: #000;
+		opacity: 0.75;
+	}
+	50% {
+		width: 110px;
+		height: 110px;
+		line-height: 110px;
+		font-size: 7rem;
+		background-color: #000;
+		opacity: 0.5;
+	}
+	75% {
+		width: 130px;
+		height: 130px;
+		line-height: 130px;
+		font-size: 8rem;
+		background-color: #000;
+		opacity: 0.25;
+	}
+	100% {
+		width: 150px;
+		height: 150px;
+		line-height: 150px;
+		font-size: 9rem;
+		background-color: #000;
+		opacity: 0;
+	}
+}
+
+@keyframes pauseButton {
+	0% {
+		width: 70px;
+		height: 70px;
+		line-height: 70px;
+		font-size: 5rem;
+		background-color: #000;
+		opacity: 1;
+	}
+	25% {
+		width: 90px;
+		height: 90px;
+		line-height: 90px;
+		font-size: 6rem;
+		background-color: #000;
+		opacity: 0.75;
+	}
+	50% {
+		width: 110px;
+		height: 110px;
+		line-height: 110px;
+		font-size: 7rem;
+		background-color: #000;
+		opacity: 0.5;
+	}
+	75% {
+		width: 130px;
+		height: 130px;
+		line-height: 130px;
+		font-size: 8rem;
+		background-color: #000;
+		opacity: 0.25;
+	}
+	100% {
+		width: 150px;
+		height: 150px;
+		line-height: 150px;
+		font-size: 9rem;
+		background-color: #000;
+		opacity: 0;
+	}
+}
+
+@media (max-width: 479.98px) {
+	.custom-video {
+		.video-js {
+			button {
+				font-size: 8px !important;
+			}
+			span {
+				font-size: 8px !important;
+			}
+			.vjs-thumbnail-holder {
+				.vjs-thumbnail-video {
+					width: 100px !important;
+					height: 100px !important;
+				}
+			}
+			.vjs-big-play-button {
+				.vjs-icon-placeholder {
+					width: 45px;
+					height: 45px;
+					line-height: 45px;
+					font-size: 35px !important;
+				}
+			}
+			&:hover {
+				.vjs-big-play-button {
+					.vjs-icon-placeholder {
+						width: 55px;
+						height: 55px;
+						line-height: 55px;
+						font-size: 45px !important;
+					}
+				}
+			}
+		}
+	}
+}
